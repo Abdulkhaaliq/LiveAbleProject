@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="LiveAble.Views.AboutUs"
+             Title="{Binding Title}"
+             BackgroundColor="LightBlue">
+    <StackLayout>
+        <Label Text="Our Misson" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" LineBreakMode="CharacterWrap"/>
+        <Label Text="We strive to bring to people who are challenged physically, spiritually but most important mentally together." FontSize="Body" TextColor="Black" />
+        <Label Text="Everyone goes through circumstances that maybe are hard to discuss and come to solutions to overcome these challenges." FontSize="Body" TextColor="Black"/>
+        <Label Text="We are trying to enable those who feel as if the world is against them to come into a safe space where help will aways be available." FontSize="Body" TextColor="Black"/>
+        <Label Text="We may not have all the answers but we will help you on your journey towards finding what you need." FontSize="Body" TextColor="Black" />
+
+    </StackLayout>
+</ContentPage>

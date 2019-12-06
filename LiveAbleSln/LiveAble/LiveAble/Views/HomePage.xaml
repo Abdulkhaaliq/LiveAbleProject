@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="http://prismlibrary.com"
+            xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:converters="clr-namespace:LiveAble.Converters"
+             prism:ViewModelLocator.AutowireViewModel="True"
+            x:Class="LiveAble.Views.HomePage">
+
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Frame BackgroundColor="Black">
+                    <Label Text="Top Picks Today" 
+                       Margin="8,8,8,0" 
+                       FontSize="Medium" 
+                       TextColor="White" 
+                       FontAttributes="Bold"/>
+                </Frame>
+
+                <CollectionView ItemsSource="{Binding Articles}"
+                        ItemsLayout="HorizontalList">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Grid Padding="10" Margin="12">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*" />
+                                    <RowDefinition Height="2*" />
+                                </Grid.RowDefinitions>
+                    
+                                    <Image Source="{Binding Image}"
+                               Grid.Row="0"
+                               Aspect="AspectFill"
+                               WidthRequest="100"
+                               HeightRequest="150" />
+                           
+                                <Frame>
+                                    <StackLayout Grid.Row="1">
+
+                                    <Label Grid.Column="1"
+                                   VerticalOptions="Center"
+                                   Text="{Binding Title}"
+                                   FontAttributes="Bold" />
+
+
+                                    <Label Text="{Binding ShortDescription}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   VerticalOptions="Start"
+                                   FontAttributes="Italic" />
+                                </StackLayout>
+                                </Frame>
+                            </Grid>
+                          
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <!--<CollectionView.Behaviors>
+                        <behaviors:EventToCommandBehavior EventName="ItemTapped" 
+                                                      Command="{Binding ArticleCommand}"
+                                                      EventArgsConverter="{converters:ItemTappedEventArgsConverter}" />
+                    </CollectionView.Behaviors>-->
+                </CollectionView>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
