@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LiveAble.Services
 {
@@ -15,13 +16,16 @@ namespace LiveAble.Services
         private IEventAggregator _eventAggregator;
         public IList<MenuItem> _allMenuItems;
 
+        private IDatabase _database;
+
         public bool LoggedIn { get; set; }
 
-        public SecurityService(IEventAggregator eventAggregator)
+        public SecurityService(IEventAggregator eventAggregator, IDatabase database)
         {
             CreateMenuItems();
 
             _eventAggregator = eventAggregator;
+            _database = database;
         }
 
         public IList<MenuItem> GetAllowedAccessItems()
@@ -56,13 +60,20 @@ namespace LiveAble.Services
             }
         }
 
-        public bool Login(string Email, string Password)
+        public async Task<bool> Login(string Email, string Password)
         {
             // Do Your Stuff to Check if Legit (ie API Calls)
 
-            LoggedIn = true;
+            var userProfile = await _database.GetPeopleByEmail(Email);
 
-            return true;
+            if (userProfile.Password == Password && userProfile.Email == Email)
+            {
+                LoggedIn = true;
+              
+                return true;
+            }
+
+            return false;
         }
 
         public void LogOut()
@@ -90,7 +101,7 @@ namespace LiveAble.Services
             menuItem = new MenuItem();
             menuItem.MenuItemId = 2;
             menuItem.MenuItemName = "Logout";
-            menuItem.NavigationPath = "";
+            menuItem.NavigationPath = "NavigationPage/LoginPage";
             menuItem.MenuOrder = 99;
             menuItem.MenuType = MenuTypeEnum.LogOut;
 
@@ -100,16 +111,16 @@ namespace LiveAble.Services
             menuItem.MenuItemId = 3;
             menuItem.MenuItemName = "About Us";
             menuItem.NavigationPath = "NavigationPage/AboutUs";
-            menuItem.MenuOrder = 3;
+            menuItem.MenuOrder = 5;
             menuItem.MenuType = MenuTypeEnum.UnSecured;
 
             _allMenuItems.Add(menuItem);
 
             menuItem = new MenuItem();
             menuItem.MenuItemId = 5;
-            menuItem.MenuItemName = "SeeAllPage";
-            menuItem.NavigationPath = "NavigationPage/SeeAllPage";
-            menuItem.MenuOrder = 5;
+            menuItem.MenuItemName = "Home";
+            menuItem.NavigationPath = "NavigationPage/HomePage";
+            menuItem.MenuOrder = 3;
             menuItem.MenuType = MenuTypeEnum.Secured;
 
             _allMenuItems.Add(menuItem);
@@ -117,9 +128,11 @@ namespace LiveAble.Services
             menuItem = new MenuItem();
             menuItem.MenuItemId = 4;
             menuItem.MenuItemName = "Account";
-            menuItem.NavigationPath = "NavigationPage/AccountPage";
+            menuItem.NavigationPath = "NavigationPage/MyAccount";
             menuItem.MenuOrder = 4;
             menuItem.MenuType = MenuTypeEnum.Secured;
+
+
         }
     }
 }

@@ -20,8 +20,10 @@ namespace LiveAble.ViewModels
 
         private IEventAggregator _eventAggregator;
 
+        private ISecurityService _securityService;
 
- 
+
+
 
         private People _person;
         public People Person
@@ -48,28 +50,26 @@ namespace LiveAble.ViewModels
 
         async void ExecuteLoginCompleteCommand()
         {
+    
+            var loginResult = await _securityService.Login(_person.Email, _person.Password);
 
-
-
-            var userProfile  = await _database.GetPeopleByEmail(_person.Email);
-           
-                if (userProfile.Password == _person.Password && userProfile.Email == _person.Email)
+           if (loginResult)
                {
+                   _eventAggregator.GetEvent<LoginMessage>().Publish();
 
-                _eventAggregator.GetEvent<LoginMessage>().Publish(userProfile);
-
-                    await _navigationService.NavigateAsync("MainPageMasterDetail/HomePage");
                }
                else
                {
                   await _navigationService.NavigateAsync("LoginPage");
                }
+            
         }
 
 
-        public LoginPageViewModel(INavigationService navigationService, IDatabase database, IEventAggregator eventAggregator)
+        public LoginPageViewModel(INavigationService navigationService, IDatabase database, ISecurityService securityService, IEventAggregator eventAggregator)
             : base(navigationService)
         {
+            _securityService = securityService;
             _database = database;
             _eventAggregator = eventAggregator;
             Title = "Login Page";

@@ -213,3 +213,4 @@ C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAbleApi\bin\Debug\netcoreapp3.0\runti
 C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAbleApi\obj\Debug\netcoreapp3.0\LiveAbleApi.RazorTargetAssemblyInfo.cache
 C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAbleApi\obj\Debug\netcoreapp3.0\LiveAbleApi.csproj.CopyComplete
 C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAbleApi\obj\Debug\netcoreapp3.0\LiveAbleApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAbleApi\obj\Debug\netcoreapp3.0\LiveAbleApi.csprojAssemblyReference.cache

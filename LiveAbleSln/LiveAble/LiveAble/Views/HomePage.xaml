@@ -3,7 +3,7 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:prism="http://prismlibrary.com"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
- 
+             xmlns:converters="clr-namespace:LiveAble.Converters"
              prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="LiveAble.Views.HomePage"
               BackgroundColor="Black">
@@ -11,16 +11,15 @@
     <ContentPage.Content>
         <StackLayout>
         <StackLayout Orientation="Vertical">
-            <Frame BackgroundColor="Black">
+            <Frame BackgroundColor="White">
                 <Label Text="Top Picks Today" 
                        Margin="8,8,8,0" 
                        FontSize="Medium" 
-                       TextColor="White" 
+                       TextColor="Black" 
                        FontAttributes="Bold"/>
             </Frame>
 
-            <Button Text="See All" Command="{Binding NavigateSeeAllCommand}" CommandParameter="NavigationPage/SeeAllPage"   HorizontalOptions="Fill"
-                                    VerticalOptions="Fill"  WidthRequest="24" HeightRequest="40"/>
+                <Button Text="See All" Command="{Binding NavigateSeeAllCommand}" CommandParameter="NavigationPage/SeeAllPage" HorizontalOptions="End" BackgroundColor="LightBlue"/>
             <CollectionView ItemsSource="{Binding Articles}"
                         ItemsLayout="HorizontalList">
 
@@ -58,10 +57,10 @@
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-            </CollectionView>
+                   
+                </CollectionView>
         </StackLayout>
            
-            <Button Text="Hey"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

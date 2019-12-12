@@ -6,7 +6,7 @@ using System.Text;
 
 namespace LiveAble.Messages
 {
-    public class LoginMessage : PubSubEvent<People>
+    public class LoginMessage : PubSubEvent
     {
     }
 

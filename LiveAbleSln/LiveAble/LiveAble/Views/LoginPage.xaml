@@ -33,7 +33,7 @@
 
                 </Grid.RowDefinitions>
                 <Entry Grid.Row="1" Text="{Binding Person.Email}" Placeholder="Email" PlaceholderColor="#bababa" FontSize="16"/>
-                <Entry Grid.Row="2" Text="{Binding Person.Password}" IsPassword="True" Placeholder="Password" PlaceholderColor="#bababa" FontSize="16"/>
+                <Entry Grid.Row="2" Text="{Binding Person.Password}" IsPassword="True" Placeholder="Password" PlaceholderColor="#bababa" FontSize="16" MaxLength="8"/>
               
                 <Button Text="Login" Command="{Binding LoginCompleteCommand}" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="4"/>
 

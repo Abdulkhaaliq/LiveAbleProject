@@ -38,6 +38,8 @@ namespace LiveAble
             containerRegistry.RegisterForNavigation<MainPageMasterDetail, MainPageMasterDetailViewModel>();
             containerRegistry.RegisterForNavigation<AboutUs, AboutUsViewModel>();
             containerRegistry.RegisterForNavigation<SeeAllPage, SeeAllPageViewModel>();
+            containerRegistry.RegisterForNavigation<Settings, SettingsViewModel>();
+            containerRegistry.RegisterForNavigation<MyAccount, MyAccountViewModel>();
         }
     }
 }

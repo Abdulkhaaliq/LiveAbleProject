@@ -36,8 +36,8 @@
                 </Grid.RowDefinitions>
                 <Entry Grid.Row="1" Text="{Binding Person.UserName}" Placeholder="User Name" PlaceholderColor="#bababa" FontSize="16"/>
                 <Entry Grid.Row="2"  Text="{Binding Person.Email}" Placeholder="Email" PlaceholderColor="#bababa" FontSize="16" Keyboard="Email"/>
-                <Entry Grid.Row="3"  Text="{Binding Person.Password}" IsPassword="True" Placeholder="Password" PlaceholderColor="#bababa" FontSize="16"/>
-                <Label Text="{Binding ValidateMessage, Mode=TwoWay}" Grid.Row="4"/>
+                <Entry Grid.Row="3"  Text="{Binding Person.Password}" IsPassword="True" Placeholder="Password" PlaceholderColor="#bababa" FontSize="16" MaxLength="8"/>
+       
 
                 <Button Text="Sign Up" Command="{Binding SignUpCompleteCommand}" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="6"/>
                 <Button Text="Login Here" Command="{Binding LoginPageCommand}" CommandParameter="NavigationPage/LoginPage" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="7" />

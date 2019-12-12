@@ -15,14 +15,7 @@ namespace LiveAble.ViewModels
 
         public ObservableCollection<Article> Articles { get; set; }
 
-        private DelegateCommand _articleCommand;
-        public DelegateCommand ArticleCommand =>
-            _articleCommand ?? (_articleCommand = new DelegateCommand(ExecuteArticleCommand));
-
-        void ExecuteArticleCommand()
-        {
-
-        }
+    
 
         private DelegateCommand _navigateSeeAllCommand;
         public DelegateCommand NavigateSeeAllCommand =>
@@ -48,21 +41,21 @@ namespace LiveAble.ViewModels
                     Title = "What Is Depression?",
                     ShortDescription = "Emotional, psychological, and social well-being.",
                     NavigationPath = "",
-              
+
                 },
 
                 new Article
                 {
                     Image = "picture2.jpg",
-                    Title = "Happy",
-                    ShortDescription = "It's bad",
+                    Title = "Side Effects?",
+                    ShortDescription = "The outcoemes may come as a suprise",
                     NavigationPath = "",
                 },
 
                 new Article
                 {
                     Image = "picture2.jpg",
-                    Title = "Confused",
+                    Title = "What is Happiness?",
                     ShortDescription = "It's bad",
                     NavigationPath = "",
 

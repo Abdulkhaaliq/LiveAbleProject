@@ -36,10 +36,12 @@ namespace LiveAble.ViewModels
             _securityService = securityService;
             _eventAggregator = eventAggregator;
             MenuItems = new ObservableCollection<MenuItem>(_securityService.GetAllowedAccessItems());
+          
             _eventAggregator.GetEvent<LoginMessage>().Subscribe(LoginEvent);
+
             _eventAggregator.GetEvent<LogOutMessage>().Subscribe(LogOutEvent);
         }
-        public void LoginEvent(People userProfile)
+        public void LoginEvent()
         {
             MenuItems = new ObservableCollection<MenuItem>(_securityService.GetAllowedAccessItems());
             NavigationService.NavigateAsync("NavigationPage/HomePage");

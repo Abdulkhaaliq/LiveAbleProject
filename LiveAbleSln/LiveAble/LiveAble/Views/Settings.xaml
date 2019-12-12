@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="LiveAble.Views.Settings"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Settings" FontSize="Large" TextColor="Black" HorizontalTextAlignment="Center"/>
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BorderWidth="5" BackgroundColor="Azure"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

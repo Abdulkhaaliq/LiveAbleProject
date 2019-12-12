@@ -192,7 +192,7 @@
     <PackageReference Include="Prism.Plugin.Popups">
       <Version>7.2.0.759</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.3.0.991221" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>

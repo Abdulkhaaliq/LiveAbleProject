@@ -15,7 +15,7 @@ namespace LiveAble.ViewModels
         public AboutUsViewModel(INavigationService navigationService)
         : base(navigationService)
         {
-            Title = "Settings";
+            Title = "About Us";
             _navigationService = navigationService;
         }
     }

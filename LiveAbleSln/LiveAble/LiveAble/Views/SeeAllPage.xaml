@@ -3,10 +3,73 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="LiveAble.Views.SeeAllPage">
+             x:Class="LiveAble.Views.SeeAllPage"
+             BackgroundColor="White">
+
     <ContentPage.Content>
-        <StackLayout >
-            <Label Text="Hey"/>
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Art of the day" 
+                       Margin="8,8,8,0" 
+                       FontSize="Medium" 
+                       TextColor="Crimson" 
+                       FontAttributes="Bold"/>
+
+                <Label HorizontalOptions="EndAndExpand"
+                       Text="See All" 
+                       FontAttributes="Bold" 
+                       Margin="0,8,8,0" 
+                       FontSize="Medium" 
+                       TextColor="DarkGray"/>
+
+            </StackLayout>
+
+            <CollectionView ItemsSource="{Binding Articles}">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal" Span="3" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Grid Padding="10" Margin="12">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="3*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding Image}"
+                                   Grid.RowSpan="2"
+                                   Aspect="AspectFill"
+                                   WidthRequest="100"
+                                   HeightRequest="150" />
+
+                            <Label Grid.Column="1"
+                                   VerticalOptions="Center"
+                                   Text="{Binding Title}"
+                                   FontAttributes="Bold" />
+
+
+                            <Label Text="{Binding ShortDescription}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   VerticalOptions="Start"
+                                   FontAttributes="Italic" />
+                        </Grid>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

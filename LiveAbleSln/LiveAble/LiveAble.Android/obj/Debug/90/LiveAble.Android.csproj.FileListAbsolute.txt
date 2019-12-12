@@ -1111,3 +1111,8 @@ C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble.Android\obj\Debug\90\an
 C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble.Android\obj\Debug\90\android\src\android\support\coordinatorlayout\R.java
 C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble.Android\obj\Debug\90\android\src\android\support\compat\R.java
 C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble.Android\obj\Debug\90\res\drawable\logo.png
+C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble.Android\obj\Debug\90\android\src\md51558244f76c53b6aeda52c8a337f2c37\FormsAnimationDrawable.java
+C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble.Android\obj\Debug\90\android\src\md51558244f76c53b6aeda52c8a337f2c37\GenericGlobalLayoutListener.java
+C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble.Android\obj\Debug\90\android\src\md51558244f76c53b6aeda52c8a337f2c37\IndicatorViewRenderer.java
+C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble.Android\obj\Debug\90\android\src\md51558244f76c53b6aeda52c8a337f2c37\ScrollLayoutManager.java
+C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble.Android\obj\Debug\90\android\src\md51558244f76c53b6aeda52c8a337f2c37\SwipeViewRenderer.java

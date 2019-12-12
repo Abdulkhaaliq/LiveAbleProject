@@ -28,3 +28,6 @@ C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble\obj\Debug\netstandard2.
 C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble\obj\Debug\netstandard2.0\LiveAble.pdb
 C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble\obj\Debug\netstandard2.0\Views\SeeAllPage.xaml.g.cs
 C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble\obj\Debug\netstandard2.0\Views\MyAccount.xaml.g.cs
+C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble\obj\Debug\netstandard2.0\Views\Settings.xaml.g.cs
+C:\Xamarin\LiveAbleProject\LiveAbleSln\LiveAble\LiveAble\obj\Debug\netstandard2.0\LiveAble.csprojAssemblyReference.cache

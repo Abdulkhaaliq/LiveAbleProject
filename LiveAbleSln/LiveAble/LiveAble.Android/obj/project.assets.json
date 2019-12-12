@@ -149,7 +149,7 @@
           "lib/MonoAndroid/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
-      "System.ComponentModel.Annotations/4.6.0": {
+      "System.ComponentModel.Annotations/4.7.0": {
         "type": "package",
         "compile": {
           "ref/MonoAndroid10/_._": {}
@@ -982,7 +982,7 @@
           "build/monoandroid90/Xamarin.Android.Support.ViewPager.targets": {}
         }
       },
-      "Xamarin.Forms/4.3.0.991221": {
+      "Xamarin.Forms/4.4.0.991265": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.CustomTabs": "28.0.0.3",
@@ -1018,8 +1018,8 @@
           "Newtonsoft.Json": "12.0.3",
           "Prism.Plugin.Popups": "7.2.0.759",
           "Prism.Unity.Forms": "7.2.0.1422",
-          "System.ComponentModel.Annotations": "4.6.0",
-          "Xamarin.Forms": "4.3.0.991221",
+          "System.ComponentModel.Annotations": "4.7.0",
+          "Xamarin.Forms": "4.4.0.991265",
           "sqlite-net-pcl": "1.6.292"
         },
         "compile": {
@@ -1301,10 +1301,10 @@
         "sqlitepclraw.provider.e_sqlite3.android.nuspec"
       ]
     },
-    "System.ComponentModel.Annotations/4.6.0": {
-      "sha512": "pOd+UhZ3X8xfwKDlgAzowUJNjp8VYVmOHZm++vCd0kq1HZ0zK3mNo2yRXjYgv7Ik/Xi43fmJfND2PLEsQSALCg==",
+    "System.ComponentModel.Annotations/4.7.0": {
+      "sha512": "0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
       "type": "package",
-      "path": "system.componentmodel.annotations/4.6.0",
+      "path": "system.componentmodel.annotations/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1384,7 +1384,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.componentmodel.annotations.4.6.0.nupkg.sha512",
+        "system.componentmodel.annotations.4.7.0.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -2300,10 +2300,10 @@
         "xamarin.android.support.viewpager.nuspec"
       ]
     },
-    "Xamarin.Forms/4.3.0.991221": {
-      "sha512": "Yh3kxXj+fnERLZfh8gNbcFWflSL0PvPh3aHtq2tpXInInVNeWDUb0qitChUm2hgJSSOpn3MBa/55nxcqPM4Kog==",
+    "Xamarin.Forms/4.4.0.991265": {
+      "sha512": "FhG5Sq2wzY8A6IzW3iMVVKqQf4G3hry0joDDGnw1SWBQ5cfW6YNpOiuh2wB/BRPoVnO0SuUBY+b1NPXve72NDQ==",
       "type": "package",
-      "path": "xamarin.forms/4.3.0.991221",
+      "path": "xamarin.forms/4.4.0.991265",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2532,6 +2532,7 @@
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/FormsTextBoxStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/MasterDetailControlStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/DensityStyles/Compact.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/Microsoft.UI.Xaml/Themes/generic.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/PageControlStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/PickerStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Properties/Xamarin.Forms.Platform.UAP.rd.xml",
@@ -2545,7 +2546,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.3.0.991221.nupkg.sha512",
+        "xamarin.forms.4.4.0.991265.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -2566,7 +2567,7 @@
       "Xamarin.Android.Support.v7.AppCompat >= 28.0.0.3",
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.3",
       "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.3",
-      "Xamarin.Forms >= 4.3.0.991221"
+      "Xamarin.Forms >= 4.4.0.991265"
     ]
   },
   "packageFolders": {
@@ -2645,7 +2646,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.3.0.991221, )"
+            "version": "[4.4.0.991265, )"
           }
         }
       }

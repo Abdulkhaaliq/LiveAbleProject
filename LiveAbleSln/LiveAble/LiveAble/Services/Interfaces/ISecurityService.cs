@@ -2,13 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LiveAble.Services.Interfaces
 { 
     public interface ISecurityService
     {
     IList<MenuItem> GetAllowedAccessItems();
-    bool Login(string Email, string Password);
+    Task<bool> Login(string Email, string Password);
     void LogOut();
     }
 }
