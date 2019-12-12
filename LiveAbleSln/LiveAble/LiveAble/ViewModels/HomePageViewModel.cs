@@ -12,6 +12,7 @@ namespace LiveAble.ViewModels
     public class HomePageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
+
         public ObservableCollection<Article> Articles { get; set; }
 
         private DelegateCommand _articleCommand;
@@ -23,10 +24,19 @@ namespace LiveAble.ViewModels
 
         }
 
+        private DelegateCommand _navigateSeeAllCommand;
+        public DelegateCommand NavigateSeeAllCommand =>
+            _navigateSeeAllCommand ?? (_navigateSeeAllCommand = new DelegateCommand(ExecuteNavigateSeeAllCommand));
+
+        async void ExecuteNavigateSeeAllCommand()
+        {
+            await _navigationService.NavigateAsync("SeeAllPage");
+        }
+
         public HomePageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-           
+
             Title = "Sign Up Page";
             _navigationService = navigationService;
 
@@ -35,14 +45,27 @@ namespace LiveAble.ViewModels
                 new Article
                 {
                     Image = "picture2.jpg",
-                    Title = "Depression",
-                    ShortDescription = "It's bad"
+                    Title = "What Is Depression?",
+                    ShortDescription = "Emotional, psychological, and social well-being.",
+                    NavigationPath = "",
+              
                 },
+
                 new Article
                 {
                     Image = "picture2.jpg",
                     Title = "Happy",
-                    ShortDescription = "It's bad"
+                    ShortDescription = "It's bad",
+                    NavigationPath = "",
+                },
+
+                new Article
+                {
+                    Image = "picture2.jpg",
+                    Title = "Confused",
+                    ShortDescription = "It's bad",
+                    NavigationPath = "",
+
                 },
             };
         }

@@ -1,4 +1,5 @@
 ﻿
+using FluentValidation;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -18,6 +19,46 @@ namespace LiveAble.ViewModels
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
+
+        private string _username;
+        public string UserName
+        {
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                this.SetProperty(ref this._username, value, "UserName");
+            }
+        }
+
+        private string _password;
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                this.SetProperty(ref this._password, value, "Password");
+            }
+        }
+    
+        private string _email;
+        public string Email
+        {
+            get
+            {
+                return _email;
+            }
+            set
+            {
+                this.SetProperty(ref this._email, value, "Email");
+            }
+        }
+     
 
         public ViewModelBase(INavigationService navigationService)
         {

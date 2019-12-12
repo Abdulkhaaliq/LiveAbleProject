@@ -3,22 +3,46 @@
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:prism="http://prismlibrary.com"
                   xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+                  xmlns:converters="clr-namespace:LiveAble.Converters"
                   prism:ViewModelLocator.AutowireViewModel="True"
                   x:Class="LiveAble.Views.MainPageMasterDetail">
     <MasterDetailPage.Master>
         <NavigationPage Title="Menu" Icon="hamburger.png">
             <x:Arguments>
-                <ContentPage Title="Menu">
-                    <StackLayout Padding="10">
-                    
-                        <Button Text="About Us" Command="{Binding AboutUsCommand}" CommandParameter="NavigationPage/AboutUs" BorderColor="Black" TextColor="Black" HeightRequest="50" CornerRadius="50"  />
-                        <Button Text="Login Here" Command="{Binding LoginPageCommand}" CommandParameter="NavigationPage/LoginPage" BorderColor="Black" TextColor="Black" HeightRequest="50" CornerRadius="50"  />
+                <ContentPage BackgroundColor="White" >
+                    <ListView ItemsSource="{Binding MenuItems}" HasUnevenRows="True" SelectionMode="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
 
-                    </StackLayout>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Margin="15,0,0,0" Text="{Binding MenuItemName}"  Grid.Column="1" Grid.Row="1" FontSize="Medium"/>
+
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+
+                        </ListView.ItemTemplate>
+
+                        <ListView.Behaviors>
+                            <behaviors:EventToCommandBehavior EventName="ItemTapped" 
+                                                      Command="{Binding NavigateCommand}"
+                                                      EventArgsConverter="{converters:ItemTappedEventArgsConverter}" />
+                        </ListView.Behaviors>
+
+                    </ListView>
                 </ContentPage>
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Master>
 </MasterDetailPage>
-
-

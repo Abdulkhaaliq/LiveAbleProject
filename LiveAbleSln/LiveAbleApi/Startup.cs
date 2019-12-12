@@ -28,7 +28,7 @@ namespace LiveAbleApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PeopleContext>(options =>
-        options.UseSqlServer("LiveAble"));
+             options.UseSqlServer(Configuration.GetConnectionString("LivableDatabase")));
             services.AddControllers();
 
 

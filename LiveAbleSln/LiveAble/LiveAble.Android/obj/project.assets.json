@@ -2,6 +2,27 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v9.0": {
+      "FluentValidation/8.6.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.4.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Prism.Core/7.2.0.1422": {
         "type": "package",
         "compile": {
@@ -27,6 +48,22 @@
           "lib/monoandroid81/Prism.Forms.dll": {}
         }
       },
+      "Prism.Plugin.Popups/7.2.0.759": {
+        "type": "package",
+        "dependencies": {
+          "Prism.Forms": "7.2.0.1422",
+          "Rg.Plugins.Popup": "1.2.0.223"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop"
+        ],
+        "compile": {
+          "lib/monoandroid90/Prism.Plugin.Popups.dll": {}
+        },
+        "runtime": {
+          "lib/monoandroid90/Prism.Plugin.Popups.dll": {}
+        }
+      },
       "Prism.Unity.Forms/7.2.0.1422": {
         "type": "package",
         "dependencies": {
@@ -38,6 +75,20 @@
         },
         "runtime": {
           "lib/netstandard2.0/Prism.Unity.Forms.dll": {}
+        }
+      },
+      "Rg.Plugins.Popup/1.2.0.223": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll": {},
+          "lib/MonoAndroid/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll": {},
+          "lib/MonoAndroid/Rg.Plugins.Popup.dll": {}
         }
       },
       "sqlite-net-pcl/1.6.292": {
@@ -931,7 +982,7 @@
           "build/monoandroid90/Xamarin.Android.Support.ViewPager.targets": {}
         }
       },
-      "Xamarin.Forms/4.3.0.991211": {
+      "Xamarin.Forms/4.3.0.991221": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.CustomTabs": "28.0.0.3",
@@ -963,9 +1014,12 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "FluentValidation": "8.6.0",
+          "Newtonsoft.Json": "12.0.3",
+          "Prism.Plugin.Popups": "7.2.0.759",
           "Prism.Unity.Forms": "7.2.0.1422",
           "System.ComponentModel.Annotations": "4.6.0",
-          "Xamarin.Forms": "4.3.0.991211",
+          "Xamarin.Forms": "4.3.0.991221",
           "sqlite-net-pcl": "1.6.292"
         },
         "compile": {
@@ -978,6 +1032,56 @@
     }
   },
   "libraries": {
+    "FluentValidation/8.6.0": {
+      "sha512": "jGQNISJy2trrDq2yufeJ3NwHKgAhC6Xpfu9ijDtDkgfiL35x/BA1R3xItoATtOQyrozP+rUTPrZHFHKtmI4ymw==",
+      "type": "package",
+      "path": "fluentvalidation/8.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.8.6.0.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net45/FluentValidation.dll",
+        "lib/net45/FluentValidation.xml",
+        "lib/netstandard1.1/FluentValidation.dll",
+        "lib/netstandard1.1/FluentValidation.xml",
+        "lib/netstandard1.6/FluentValidation.dll",
+        "lib/netstandard1.6/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml"
+      ]
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "Prism.Core/7.2.0.1422": {
       "sha512": "U6tZ4Iq+ELyK5PedRC6E20caZXXTmTYiw5evpv0M3WcfKgih9H5G5LDBlDl+65eC5Vb4lnOaUCAtckdEl2MRxA==",
       "type": "package",
@@ -1016,6 +1120,29 @@
         "prism.forms.nuspec"
       ]
     },
+    "Prism.Plugin.Popups/7.2.0.759": {
+      "sha512": "yvyRLjVGMyWtG325asfcw1rO4lYfDbmhX/V/f4jwTfQ6w7NWirMt6det9MO3VwFtAZU7Ik0cC6TemO0awAZsNg==",
+      "type": "package",
+      "path": "prism.plugin.popups/7.2.0.759",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid81/Prism.Plugin.Popups.dll",
+        "lib/monoandroid81/Prism.Plugin.Popups.pdb",
+        "lib/monoandroid81/Prism.Plugin.Popups.xml",
+        "lib/monoandroid90/Prism.Plugin.Popups.dll",
+        "lib/monoandroid90/Prism.Plugin.Popups.pdb",
+        "lib/monoandroid90/Prism.Plugin.Popups.xml",
+        "lib/netstandard2.0/Prism.Plugin.Popups.dll",
+        "lib/netstandard2.0/Prism.Plugin.Popups.pdb",
+        "lib/netstandard2.0/Prism.Plugin.Popups.xml",
+        "lib/xamarinios10/Prism.Plugin.Popups.dll",
+        "lib/xamarinios10/Prism.Plugin.Popups.pdb",
+        "lib/xamarinios10/Prism.Plugin.Popups.xml",
+        "prism.plugin.popups.7.2.0.759.nupkg.sha512",
+        "prism.plugin.popups.nuspec"
+      ]
+    },
     "Prism.Unity.Forms/7.2.0.1422": {
       "sha512": "BZBAgGsMuq1LTfu6fAJiF5vMmcd5Vw+AefQhA53nWdp+MAU/U5NOlftSI8IbvgCvzDaKcfbEoibZcQo86JM9Pw==",
       "type": "package",
@@ -1028,6 +1155,37 @@
         "lib/netstandard2.0/Prism.Unity.Forms.xml",
         "prism.unity.forms.7.2.0.1422.nupkg.sha512",
         "prism.unity.forms.nuspec"
+      ]
+    },
+    "Rg.Plugins.Popup/1.2.0.223": {
+      "sha512": "0ruzj7EedYRUhhsk327z7ymaHzf9E/n6Slg2ZJfOYqtZ14tX1dtWbyNRSmGEnWxLyN1qSq4Od4U6vYupHRpdtw==",
+      "type": "package",
+      "path": "rg.plugins.popup/1.2.0.223",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll.mdb",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.pdb",
+        "lib/MonoAndroid/Rg.Plugins.Popup.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.pdb",
+        "lib/MonoTouch/Rg.Plugins.Popup.IOS.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.IOS.pdb",
+        "lib/MonoTouch/Rg.Plugins.Popup.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.pdb",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.pdb",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.pdb",
+        "lib/netstandard1.0/Rg.Plugins.Popup.dll",
+        "lib/netstandard1.0/Rg.Plugins.Popup.pdb",
+        "lib/uap10.0/Rg.Plugins.Popup.UWP.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.UWP.pdb",
+        "lib/uap10.0/Rg.Plugins.Popup.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.pdb",
+        "readme.txt",
+        "rg.plugins.popup.1.2.0.223.nupkg.sha512",
+        "rg.plugins.popup.nuspec"
       ]
     },
     "sqlite-net-pcl/1.6.292": {
@@ -2142,10 +2300,10 @@
         "xamarin.android.support.viewpager.nuspec"
       ]
     },
-    "Xamarin.Forms/4.3.0.991211": {
-      "sha512": "cWbxRKy6oPbFvpw2K6Du3bSo34LDyVKYSR6jCDSbB3Ieyj6549bWQbBLUEptRGQQ8fhDTcJQ/ezqwGwxd+7bkg==",
+    "Xamarin.Forms/4.3.0.991221": {
+      "sha512": "Yh3kxXj+fnERLZfh8gNbcFWflSL0PvPh3aHtq2tpXInInVNeWDUb0qitChUm2hgJSSOpn3MBa/55nxcqPM4Kog==",
       "type": "package",
-      "path": "xamarin.forms/4.3.0.991211",
+      "path": "xamarin.forms/4.3.0.991221",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2387,7 +2545,7 @@
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.3.0.991211.nupkg.sha512",
+        "xamarin.forms.4.3.0.991221.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -2400,6 +2558,7 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
       "LiveAble >= 1.0.0",
+      "Prism.Plugin.Popups >= 7.2.0.759",
       "Prism.Unity.Forms >= 7.2.0.1422",
       "Xamarin.Android.Support.CustomTabs >= 28.0.0.3",
       "Xamarin.Android.Support.Design >= 28.0.0.3",
@@ -2407,7 +2566,7 @@
       "Xamarin.Android.Support.v7.AppCompat >= 28.0.0.3",
       "Xamarin.Android.Support.v7.CardView >= 28.0.0.3",
       "Xamarin.Android.Support.v7.MediaRouter >= 28.0.0.3",
-      "Xamarin.Forms >= 4.3.0.991211"
+      "Xamarin.Forms >= 4.3.0.991221"
     ]
   },
   "packageFolders": {
@@ -2417,11 +2576,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj",
+      "projectUniqueName": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj",
       "projectName": "LiveAble.Android",
-      "projectPath": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj",
+      "projectPath": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj",
       "packagesPath": "C:\\Users\\Abdulkhaaliq.Dollie\\.nuget\\packages\\",
-      "outputPath": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble.Android\\obj\\",
+      "outputPath": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2442,8 +2601,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj": {
-              "projectPath": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj"
+            "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj": {
+              "projectPath": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj"
             }
           }
         }
@@ -2452,6 +2611,10 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "Prism.Plugin.Popups": {
+            "target": "Package",
+            "version": "[7.2.0.759, )"
+          },
           "Prism.Unity.Forms": {
             "target": "Package",
             "version": "[7.2.0.1422, )"
@@ -2482,7 +2645,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.3.0.991211, )"
+            "version": "[4.3.0.991221, )"
           }
         }
       }

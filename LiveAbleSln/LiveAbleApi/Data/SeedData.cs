@@ -13,22 +13,7 @@ namespace LiveAbleApi.Data
             if (!context.UsersInfo.Any())
             {
                 context.UsersInfo.AddRange(
-                    new People
-                    {
-                        UserName = "Abdul-Khaaliq",
-                        Age = 20,
-                        Email = "abdulkhaaliq@gmail.com",
-                        Gender = "Male",
-                        Password ="Dollie",
-                    },
-                    new People
-                    {
-                        UserName = "Abdul",
-                        Age = 21,
-                        Email = "abdul@gmail.com",
-                        Gender = "Male",
-                        Password = "Solomon",
-                    }
+
                 );
 
                 context.SaveChanges();

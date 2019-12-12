@@ -1,39 +1,53 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using LiveAble.Messages;
+using LiveAble.Model;
+using LiveAble.Services.Interfaces;
+using Prism.Commands;
+using Prism.Events;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections.ObjectModel;
+using MenuItem = LiveAble.Model.Security.MenuItem;
 
 namespace LiveAble.ViewModels
 {
     public class MainPageMasterDetailViewModel : ViewModelBase
     {
-        private readonly INavigationService _navigationService;
-
-        private DelegateCommand _aboutUsCommand;
-        public DelegateCommand AboutUsCommand =>
-            _aboutUsCommand ?? (_aboutUsCommand = new DelegateCommand(ExecuteAboutUsCommand));
-
-        async void ExecuteAboutUsCommand()
+        private ISecurityService _securityService;
+        private IEventAggregator _eventAggregator;
+        private DelegateCommand<MenuItem> _navigateCommand;
+        private ObservableCollection<MenuItem> _menuItems;
+        public ObservableCollection<MenuItem> MenuItems
         {
-            await _navigationService.NavigateAsync("NavigationPage/AboutUs");
+            get { return _menuItems; }
+            set { SetProperty(ref _menuItems, value); }
         }
-
-        private DelegateCommand _loginPageCommand;
-        public DelegateCommand LoginPageCommand =>
-         _loginPageCommand ?? (_loginPageCommand = new DelegateCommand(ExecuteLoginPageCommand));
-
-        async void ExecuteLoginPageCommand()
+        public DelegateCommand<MenuItem> NavigateCommand =>
+            _navigateCommand ?? (_navigateCommand = new DelegateCommand<MenuItem>(ExecuteNavigateCommand));
+        public async void ExecuteNavigateCommand(MenuItem menu)
         {
-            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
+            if (menu.MenuType == LiveAble.Enums.MenuTypeEnum.LogOut)
+                _securityService.LogOut();
+            else
+                await NavigationService.NavigateAsync(menu.NavigationPath);
         }
-
-        public MainPageMasterDetailViewModel(INavigationService navigationService)
+        public MainPageMasterDetailViewModel(INavigationService navigationService, ISecurityService securityService, IEventAggregator eventAggregator)
             : base(navigationService)
         {
-            Title = "Sign Up Page";
-            _navigationService = navigationService;
+            Title = "Main Page";
+            _securityService = securityService;
+            _eventAggregator = eventAggregator;
+            MenuItems = new ObservableCollection<MenuItem>(_securityService.GetAllowedAccessItems());
+            _eventAggregator.GetEvent<LoginMessage>().Subscribe(LoginEvent);
+            _eventAggregator.GetEvent<LogOutMessage>().Subscribe(LogOutEvent);
+        }
+        public void LoginEvent(People userProfile)
+        {
+            MenuItems = new ObservableCollection<MenuItem>(_securityService.GetAllowedAccessItems());
+            NavigationService.NavigateAsync("NavigationPage/HomePage");
+        }
+        public void LogOutEvent()
+        {
+            MenuItems = new ObservableCollection<MenuItem>(_securityService.GetAllowedAccessItems());
+            NavigationService.NavigateAsync("NavigationPage/LoginPage");
         }
     }
 }

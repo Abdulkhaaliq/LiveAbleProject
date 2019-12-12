@@ -4,55 +4,45 @@ using SQLite;
 using System.IO;
 using LiveAble.Model;
 using LiveAble.Services.Interfaces;
+using System.Threading.Tasks;
 
 namespace PlyOn.Services
 {
     public class LiveableDatabase : IDatabase
     {
 
-        static SQLiteConnection sqliteconnection;
+        private SQLiteAsyncConnection userDatabase;
 
 
         public LiveableDatabase()
         {
-            var dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "Information.db");
+            var dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "Information.db3");
 
-            sqliteconnection = new SQLiteConnection(dbPath);
-            sqliteconnection.CreateTable<People>();
+            userDatabase = new SQLiteAsyncConnection(dbPath);
+            userDatabase.CreateTableAsync<People>().Wait();
         }
 
-        public List<People> GetAllInformationData()
+        public Task<List<People>> GetAllInformationData()
         {
-            return (from data in sqliteconnection.Table<People>()
-                    select data).ToList();
+            return userDatabase.Table<People>().ToListAsync();
+             
         }
 
-        public People GetInformationData(int id)
+        public Task<People> GetPeopleByEmail(string Email)
         {
-            return sqliteconnection.Table<People>().FirstOrDefault(t => t.ID == id);
+            return userDatabase.Table<People>().Where(x => x.Email == Email).FirstOrDefaultAsync();
         }
 
-        public void DeleteAllInformation()
+        public Task<int> DeleteAllInformation()
         {
-            sqliteconnection.DeleteAll<People>();
+            return userDatabase.DeleteAllAsync<People>();
         }
 
-        public void SaveItemAsync(People info)
+        public Task<int> SaveItemAsync(People info)
         {
-            if (info.ID != 0)
-            {
-                sqliteconnection.Update(info);
-            }
-            else
-            {
-                sqliteconnection.Insert(info);
-            }
+               return userDatabase.InsertAsync(info);
         }
 
-        public void DeleteInfo(int id)
-        {
-            sqliteconnection.Delete<People>(id);
-        }
-
+ 
     }
 }

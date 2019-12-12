@@ -12,17 +12,19 @@ namespace LiveAble.Model
 
         public int ID { get; set; }
 
-        [Required]
+
+      
+        [Required(AllowEmptyStrings = false, ErrorMessage = "UserName should not be empty")]
         public string UserName { get; set; }
+       
 
-        public int Age { get; set; }
-
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Email should not be empty")]
         public string Email { get; set; }
 
-        public string Gender { get; set; }
 
-        [Required]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Password should not be empty")]
         public string Password { get; set; }
+       
+
     }
 }

@@ -11,6 +11,8 @@ namespace LiveAble.Model
 
         public string ShortDescription { get; set; }
 
+        public string NavigationPath { get; set; }
+
 
     }
 }

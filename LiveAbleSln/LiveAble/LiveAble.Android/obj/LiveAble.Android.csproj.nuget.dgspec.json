@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj": {}
+    "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj": {}
   },
   "projects": {
-    "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj": {
+    "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj",
+        "projectUniqueName": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj",
         "projectName": "LiveAble.Android",
-        "projectPath": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj",
+        "projectPath": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble.Android\\LiveAble.Android.csproj",
         "packagesPath": "C:\\Users\\Abdulkhaaliq.Dollie\\.nuget\\packages\\",
-        "outputPath": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble.Android\\obj\\",
+        "outputPath": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj": {
-                "projectPath": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj"
+              "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj": {
+                "projectPath": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj"
               }
             }
           }
@@ -42,6 +42,10 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
+            "Prism.Plugin.Popups": {
+              "target": "Package",
+              "version": "[7.2.0.759, )"
+            },
             "Prism.Unity.Forms": {
               "target": "Package",
               "version": "[7.2.0.1422, )"
@@ -72,20 +76,20 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.3.0.991211, )"
+              "version": "[4.3.0.991221, )"
             }
           }
         }
       }
     },
-    "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj": {
+    "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj",
+        "projectUniqueName": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj",
         "projectName": "LiveAble",
-        "projectPath": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj",
+        "projectPath": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble\\LiveAble.csproj",
         "packagesPath": "C:\\Users\\Abdulkhaaliq.Dollie\\.nuget\\packages\\",
-        "outputPath": "C:\\Xamarin\\Personal\\LiveAbleSln\\LiveAble\\LiveAble\\obj\\",
+        "outputPath": "C:\\Xamarin\\LiveAbleProject\\LiveAbleSln\\LiveAble\\LiveAble\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -117,11 +121,23 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.6.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Prism.Plugin.Popups": {
+              "target": "Package",
+              "version": "[7.2.0.759, )"
             },
             "Prism.Unity.Forms": {
               "target": "Package",
@@ -133,7 +149,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.3.0.991211, )"
+              "version": "[4.3.0.991221, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",

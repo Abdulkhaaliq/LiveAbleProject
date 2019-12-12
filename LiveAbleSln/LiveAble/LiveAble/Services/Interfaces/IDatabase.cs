@@ -2,17 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace LiveAble.Services.Interfaces
 {
-    interface IDatabase
+    public interface IDatabase
     {
-        List<People> GetAllInformationData();
+        Task<int> SaveItemAsync(People info);
+        Task<List<People>> GetAllInformationData();
+        Task<People> GetPeopleByEmail(string Email);
 
-        People GetInformationData(int id);
-
-        void SaveItemAsync(People info);
-
-        void DeleteInfo(int id);
     }
 }

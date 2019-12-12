@@ -1,19 +1,37 @@
-﻿using LiveAble.Model;
+﻿using FluentValidation;
+using LiveAble.Model;
 using LiveAble.Services.Interfaces;
 using LiveAble.ViewModels;
+using Newtonsoft.Json;
+using PlyOn.Services;
 using Prism.Commands;
 using Prism.Navigation;
+using Prism.Services.Dialogs;
 using SQLite;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
-
+using System.Net.Http;
 
 namespace LiveAble.ViewModels
 {
     public class SignUpPageViewModel : ViewModelBase
     {
+        private readonly IValidator _validator;
+        public List<People> User { get; set; }
 
-        private readonly IDatabase _database;
+
+
+        private People _person;
+        public People Person
+        {
+            get { return _person; }
+            set { SetProperty(ref _person, value); }
+        }
+
+       private readonly IDatabase _database;
+
         private readonly INavigationService _navigationService;
 
         private DelegateCommand _signUpCompleteCommand;
@@ -24,25 +42,55 @@ namespace LiveAble.ViewModels
         public DelegateCommand LoginPageCommand =>
             _loginPageCommand ?? (_loginPageCommand = new DelegateCommand(ExecuteLoginPageCommand));
 
-         async void ExecuteLoginPageCommand()
+        async void ExecuteLoginPageCommand()
         {
             await NavigationService.GoBackAsync();
         }
-        
-         void ExecuteSignUpCompleteCommand()
-        {
 
-            var item = ;
-            _database.SaveItemAsync(item);
+         async void ExecuteSignUpCompleteCommand()
+        {
+                Post();
+                var userProfile = new People();
+                await _database.SaveItemAsync(Person);
+         
+                await _navigationService.NavigateAsync("HomePage");
         }
 
+        public async void Post()
+        {
+            var client = new HttpClient();
+            var url = "http://10.0.2.2:5000/Users";
 
-        public SignUpPageViewModel(INavigationService navigationService)
+            var info = _database;
+
+            var json = JsonConvert.SerializeObject(Person);
+            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+
+            try
+            {
+                var response = await client.PostAsync(url, content);
+
+            }
+            catch (Exception ex)
+            {
+               
+            }
+        }
+          
+
+
+        public SignUpPageViewModel(INavigationService navigationService, IDatabase database)
             : base(navigationService)
         {
             Title = "Sign Up Page";
-            _navigationService = navigationService;
            
+            _navigationService = navigationService;
+
+            _database = database;
+
+            Person = new People();
+
+            _validator = new UserValidator();
         }
     }
 }
