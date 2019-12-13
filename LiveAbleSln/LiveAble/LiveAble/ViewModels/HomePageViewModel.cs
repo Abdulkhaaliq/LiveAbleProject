@@ -22,7 +22,7 @@ namespace LiveAble.ViewModels
 
         public async void ExecuteNavigateCommand(Article article)
         {
-            await NavigationService.NavigateAsync(article.NavigationPath);
+            await NavigationService.NavigateAsync("NavigationPage/PdfView");
         }
 
         private DelegateCommand _navigateSeeAllCommand;
@@ -49,7 +49,7 @@ namespace LiveAble.ViewModels
                     Image = "picture2.jpg",
                     Title = "What Is Depression?",
                     ShortDescription = "Emotional well-being.",
-                    NavigationPath = "PdfView",
+                    NavigationPath = "NavigationPage/PdfView",
 
                 },
 

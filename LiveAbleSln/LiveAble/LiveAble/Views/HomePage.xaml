@@ -40,16 +40,13 @@
                                     <Image Source="{Binding Image}"  Grid.Column="0" Aspect="AspectFill"/>
                                     <Label  Text="{Binding Title}"  Grid.Column="1" Grid.Row="0" FontSize="Medium" TextColor="Black"  HorizontalTextAlignment="Center" BackgroundColor="White"/>
                                     <Label  Text="{Binding ShortDescription}"  Grid.Column="1" Grid.Row="1" FontSize="Medium" TextColor="Black"  HorizontalTextAlignment="Center" BackgroundColor="White"/>
-                                    
+                                    <Button Text="Open" Command="{Binding NavigateCommand}"  Grid.Column="1" Grid.Row="2" BackgroundColor="LightBlue"/>
+
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    <ListView.Behaviors>
-                        <prism:EventToCommandBehavior EventName="ItemTapped" 
-                                                      Command="{Binding NavigateCommand}"
-                                                      EventArgsConverter="{converters:ItemTappedEventArgsConverter}" />
-                    </ListView.Behaviors>
+     
                 </ListView>
             </StackLayout>
         </StackLayout>
