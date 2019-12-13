@@ -15,6 +15,7 @@ namespace LiveAble.ViewModels
 
         public ObservableCollection<Article> Articles { get; set; }
 
+
         private DelegateCommand<Article> _navigateCommand;
         public DelegateCommand<Article> NavigateCommand =>
             _navigateCommand ?? (_navigateCommand = new DelegateCommand<Article>(ExecuteNavigateCommand));
@@ -22,7 +23,6 @@ namespace LiveAble.ViewModels
         public async void ExecuteNavigateCommand(Article article)
         {
             await NavigationService.NavigateAsync(article.NavigationPath);
-
         }
 
         private DelegateCommand _navigateSeeAllCommand;
@@ -31,6 +31,7 @@ namespace LiveAble.ViewModels
 
         async void ExecuteNavigateSeeAllCommand()
         {
+
             await _navigationService.NavigateAsync("SeeAllPage");
         }
 

@@ -86,7 +86,7 @@ namespace LiveAble.Services
         public void LogOut()
         {
             LoggedIn = false;
-
+          
             _eventAggregator.GetEvent<LogOutMessage>().Publish();
         }
 

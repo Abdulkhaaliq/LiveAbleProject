@@ -4,10 +4,11 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="LiveAble.Views.PdfView">
-
+    <ContentPage.Content>
     <StackLayout>
 
-        <Button Text="Open Embedded PDF" Command="{Binding OpenPdfCommand}"/>
+        <Button Text="Open PDF" Command="{Binding OpenPdfCommand}"/>
 
     </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

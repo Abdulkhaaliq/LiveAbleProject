@@ -11,18 +11,11 @@
 
             <StackLayout Orientation="Horizontal">
 
-                <Label Text="Art of the day" 
+                <Label Text="All Topics" 
                        Margin="8,8,8,0" 
                        FontSize="Medium" 
                        TextColor="Crimson" 
                        FontAttributes="Bold"/>
-
-                <Label HorizontalOptions="EndAndExpand"
-                       Text="See All" 
-                       FontAttributes="Bold" 
-                       Margin="0,8,8,0" 
-                       FontSize="Medium" 
-                       TextColor="DarkGray"/>
 
             </StackLayout>
 

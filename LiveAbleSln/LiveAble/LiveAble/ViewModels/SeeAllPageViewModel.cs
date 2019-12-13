@@ -34,26 +34,27 @@ namespace LiveAble.ViewModels
 
                 new Article
                 {
-                    Image = "picture2.jpg",
+                    Image = "Image1.jpg",
                     Title = "Side Effects?",
                     ShortDescription = "The outcoemes may come as a suprise",
                     NavigationPath = "",
                 },
 
-                new Article
+
+              new Article
                 {
-                    Image = "picture2.jpg",
+                    Image = "Image2.jpg",
                     Title = "What is Happiness?",
-                    ShortDescription = "It's bad",
-                    NavigationPath = "",
+                    ShortDescription = "Is it Bad?",
+                    NavigationPath = "https://www.quora.com/Can-a-depressed-person-ever-feel-happiness",
 
                 },
 
                   new Article
                 {
                     Image = "picture2.jpg",
-                    Title = "Can anyone achieve Happiness?",
-                    ShortDescription = "It's bad",
+                    Title = "How can I be me?",
+                    ShortDescription = "Solution?",
                     NavigationPath = "",
 
                 },
@@ -61,8 +62,8 @@ namespace LiveAble.ViewModels
                     new Article
                 {
                     Image = "picture2.jpg",
-                    Title = "What is Happiness",
-                    ShortDescription = "It's bad",
+                    Title = "Atleast you're not dead",
+                    ShortDescription = "It's good!",
                     NavigationPath = "",
 
                 },

@@ -18,7 +18,7 @@ namespace LiveAble.ViewModels
 {
     public class SignUpPageViewModel : ViewModelBase
     {
-        private readonly IValidator _validator;
+   
         public List<People> User { get; set; }
 
 
@@ -90,7 +90,7 @@ namespace LiveAble.ViewModels
 
             Person = new People();
 
-            _validator = new UserValidator();
+   
         }
     }
 }
