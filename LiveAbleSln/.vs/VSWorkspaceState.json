@@ -4,8 +4,9 @@
     "\\LiveAble",
     "\\LiveAble\\LiveAble",
     "\\LiveAble\\LiveAble\\Services",
-    "\\LiveAble\\LiveAble\\ViewModels"
+    "\\LiveAble\\LiveAble\\ViewModels",
+    "\\LiveAble\\LiveAble\\Views"
   ],
-  "SelectedNode": "\\LiveAble\\LiveAble\\Services\\LiveAbleDatabase.cs",
+  "SelectedNode": "\\LiveAble\\LiveAble\\Views\\LoginPage.xaml",
   "PreviewInSolutionExplorer": false
 }

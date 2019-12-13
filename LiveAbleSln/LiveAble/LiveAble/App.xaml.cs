@@ -40,6 +40,7 @@ namespace LiveAble
             containerRegistry.RegisterForNavigation<SeeAllPage, SeeAllPageViewModel>();
             containerRegistry.RegisterForNavigation<Settings, SettingsViewModel>();
             containerRegistry.RegisterForNavigation<MyAccount, MyAccountViewModel>();
+            containerRegistry.RegisterForNavigation<PdfView, PdfViewViewModel>();
         }
     }
 }

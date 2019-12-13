@@ -53,7 +53,7 @@ namespace LiveAble.ViewModels
                 var userProfile = new People();
                 await _database.SaveItemAsync(Person);
          
-                await _navigationService.NavigateAsync("HomePage");
+                await _navigationService.NavigateAsync("LoginPage");
         }
 
         public async void Post()

@@ -1,8 +1,10 @@
 ﻿using LiveAble.Enums;
 using LiveAble.Messages;
+using LiveAble.Model;
 using LiveAble.Model.Security;
 using LiveAble.Services.Interfaces;
 using Prism.Events;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,7 @@ namespace LiveAble.Services
     {
         private IEventAggregator _eventAggregator;
         public IList<MenuItem> _allMenuItems;
+        private IPageDialogService _pageDialogService;
 
         private IDatabase _database;
 
@@ -71,6 +74,10 @@ namespace LiveAble.Services
                 LoggedIn = true;
               
                 return true;
+            }
+            else if(userProfile.Email == null && userProfile.Password == null || userProfile.Email == null || userProfile.Password == null)
+            {
+                await _pageDialogService.DisplayAlertAsync("Try Again", "Please enter your details", "Ok");
             }
 
             return false;

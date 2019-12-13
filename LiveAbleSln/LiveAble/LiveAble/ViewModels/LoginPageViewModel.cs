@@ -6,6 +6,7 @@ using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace LiveAble.ViewModels
 
         private ISecurityService _securityService;
 
-
+        private IPageDialogService _pageDialogService;
 
 
         private People _person;
@@ -50,25 +51,30 @@ namespace LiveAble.ViewModels
 
         async void ExecuteLoginCompleteCommand()
         {
-    
-            var loginResult = await _securityService.Login(_person.Email, _person.Password);
+            if (_person.Email == null && _person.Password == null || _person.Email == null || _person.Password == null)
+            {
+                await _pageDialogService.DisplayAlertAsync("Try Again", "Please enter your details", "Ok");
+            }
+            else
+            {
+                var loginResult = await _securityService.Login(_person.Email, _person.Password);
 
-           if (loginResult)
-               {
-                   _eventAggregator.GetEvent<LoginMessage>().Publish();
+                if (loginResult)
+                {
+                    _eventAggregator.GetEvent<LoginMessage>().Publish();
+                    await _pageDialogService.DisplayAlertAsync("Welcome", "Successful Login", "Ok");
 
-               }
-               else
-               {
-                  await _navigationService.NavigateAsync("LoginPage");
-               }
-            
+                }
+            }
+        
         }
+        
 
 
-        public LoginPageViewModel(INavigationService navigationService, IDatabase database, ISecurityService securityService, IEventAggregator eventAggregator)
+        public LoginPageViewModel(INavigationService navigationService, IDatabase database, ISecurityService securityService, IEventAggregator eventAggregator, IPageDialogService pageDialogService)
             : base(navigationService)
         {
+            _pageDialogService = pageDialogService;
             _securityService = securityService;
             _database = database;
             _eventAggregator = eventAggregator;

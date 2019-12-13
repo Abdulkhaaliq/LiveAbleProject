@@ -15,7 +15,15 @@ namespace LiveAble.ViewModels
 
         public ObservableCollection<Article> Articles { get; set; }
 
-    
+        private DelegateCommand<Article> _navigateCommand;
+        public DelegateCommand<Article> NavigateCommand =>
+            _navigateCommand ?? (_navigateCommand = new DelegateCommand<Article>(ExecuteNavigateCommand));
+
+        public async void ExecuteNavigateCommand(Article article)
+        {
+            await NavigationService.NavigateAsync(article.NavigationPath);
+
+        }
 
         private DelegateCommand _navigateSeeAllCommand;
         public DelegateCommand NavigateSeeAllCommand =>
@@ -39,14 +47,14 @@ namespace LiveAble.ViewModels
                 {
                     Image = "picture2.jpg",
                     Title = "What Is Depression?",
-                    ShortDescription = "Emotional, psychological, and social well-being.",
-                    NavigationPath = "",
+                    ShortDescription = "Emotional well-being.",
+                    NavigationPath = "PdfView",
 
                 },
 
                 new Article
                 {
-                    Image = "picture2.jpg",
+                    Image = "Image1.jpg",
                     Title = "Side Effects?",
                     ShortDescription = "The outcoemes may come as a suprise",
                     NavigationPath = "",
@@ -54,10 +62,10 @@ namespace LiveAble.ViewModels
 
                 new Article
                 {
-                    Image = "picture2.jpg",
+                    Image = "Image2.jpg",
                     Title = "What is Happiness?",
-                    ShortDescription = "It's bad",
-                    NavigationPath = "",
+                    ShortDescription = "Is it Bad?",
+                    NavigationPath = "https://www.quora.com/Can-a-depressed-person-ever-feel-happiness",
 
                 },
             };
