@@ -14,9 +14,11 @@ namespace LiveAble
     public partial class App
     {
        
-        public App() : this(null) { }
+        public App()
+            : this(null) { }
 
-        public App(IPlatformInitializer initializer) : base(initializer) { }
+        public App(IPlatformInitializer initializer)
+            : base(initializer) { }
 
         protected override async void OnInitialized()
         {

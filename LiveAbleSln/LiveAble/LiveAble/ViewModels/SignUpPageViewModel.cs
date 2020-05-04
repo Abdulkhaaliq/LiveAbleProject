@@ -1,5 +1,4 @@
-﻿using FluentValidation;
-using LiveAble.Model;
+﻿using LiveAble.Model;
 using LiveAble.Services.Interfaces;
 using LiveAble.ViewModels;
 using Newtonsoft.Json;
@@ -48,13 +47,13 @@ namespace LiveAble.ViewModels
         }
 
          async void ExecuteSignUpCompleteCommand()
-        {
-                Post();
-                var userProfile = new People();
-                await _database.SaveItemAsync(Person);
+         {
+            Post();
+
+            await _database.SaveItemAsync(Person);
          
-                await _navigationService.NavigateAsync("LoginPage");
-        }
+            await _navigationService.NavigateAsync("LoginPage");
+         }
 
         public async void Post()
         {
@@ -71,7 +70,7 @@ namespace LiveAble.ViewModels
                 var response = await client.PostAsync(url, content);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                
             }

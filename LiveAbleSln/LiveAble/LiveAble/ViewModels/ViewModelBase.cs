@@ -1,5 +1,4 @@
 ﻿
-using FluentValidation;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;

@@ -38,7 +38,7 @@ namespace LiveAble.Droid.Services
                 intent.SetFlags(ActivityFlags.NoHistory);
             }
 
-            Xamarin.Forms.Forms.Context.StartActivity(intent);
+            // Xamarin.Forms.Forms.Context.StartActivity(intent);
         }
     }
 }
